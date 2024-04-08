@@ -1,0 +1,20 @@
+python_sources(
+    name="libcore",
+    sources=["**/*.py", "!*_test.py"],
+)
+
+python_tests(
+    name="tests",
+    sources=["**/*_test.py"],
+)
+
+
+python_distribution(
+    name="core-dist",
+    dependencies=[":libcore"],
+    provides=python_artifact(
+        name="core-dist",
+        version="0.0.1",
+        description="A distribution for the core library.",
+    ),
+)

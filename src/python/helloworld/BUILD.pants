@@ -1,0 +1,13 @@
+python_sources(
+    name="libhelloworld",
+    sources=["**/*.py"],
+    dependencies=[
+        "src/python/core:libcore",
+    ],
+)
+
+pex_binary(
+    name="helloworld",
+    entry_point="helloworld.main",
+    dependencies=[":libhelloworld"],
+)

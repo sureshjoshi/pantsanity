@@ -1,0 +1,45 @@
+[GLOBAL]
+pants_version = "2.19.1"
+
+build_patterns = ["BUILD.pants", "BUILD"]
+pantsd = true
+
+backend_packages = [
+    "pants.backend.experimental.python.lint.add_trailing_comma",
+    "pants.backend.experimental.python.lint.ruff",
+    "pants.backend.experimental.python.typecheck.pyright",
+    "pants.backend.experimental.python.typecheck.pytype",
+    "pants.backend.python",
+    "pants.backend.python.lint.autoflake",
+    "pants.backend.python.lint.bandit",
+    "pants.backend.python.lint.black",
+    "pants.backend.python.lint.docformatter",
+    "pants.backend.python.lint.flake8",
+    "pants.backend.python.lint.isort",
+    "pants.backend.python.lint.pydocstyle",
+    "pants.backend.python.lint.pylint",
+    "pants.backend.python.lint.pyupgrade",
+    "pants.backend.python.lint.yapf",
+    "pants.backend.python.typecheck.mypy",
+]
+
+[cli.alias]
+# Missing publish, repl, run for python
+sanity = "fix fmt lint check test package"
+
+[source]
+marker_filenames = ["BUILD.pants"]
+
+[python]
+interpreter_constraints = [">=3.9"]
+
+[bandit]
+# Skipping assertion warnings - because this is an example project
+args = ["--skip B101"]
+
+[pydocstyle]
+# Ignore module and package docs
+args = ["--match=`!*_test.py`", "--ignore=D100,D104"]
+
+[pylint]
+args = ["--ignore=greeter_test.py"]
