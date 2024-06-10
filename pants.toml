@@ -5,10 +5,12 @@ build_patterns = ["BUILD.pants", "BUILD"]
 pantsd = true
 
 backend_packages = [
+    "pants.backend.experimental.cc",
+    "pants.backend.experimental.cc.lint.clangformat",
     "pants.backend.experimental.python.lint.add_trailing_comma",
     "pants.backend.experimental.python.lint.ruff",
     "pants.backend.experimental.python.typecheck.pyright",
-    "pants.backend.experimental.python.typecheck.pytype",
+#    "pants.backend.experimental.python.typecheck.pytype",
     "pants.backend.python",
     "pants.backend.python.lint.autoflake",
     "pants.backend.python.lint.bandit",
@@ -20,7 +22,7 @@ backend_packages = [
     "pants.backend.python.lint.pylint",
     "pants.backend.python.lint.pyupgrade",
     "pants.backend.python.lint.yapf",
-    "pants.backend.python.typecheck.mypy",
+#    "pants.backend.python.typecheck.mypy",
 ]
 
 [cli.alias]
@@ -31,7 +33,7 @@ sanity = "fix fmt lint check test package"
 marker_filenames = ["BUILD.pants"]
 
 [python]
-interpreter_constraints = [">=3.9"]
+interpreter_constraints = ["==3.11.*"]
 
 [bandit]
 # Skipping assertion warnings - because this is an example project
@@ -43,3 +45,6 @@ args = ["--match=`!*_test.py`", "--ignore=D100,D104"]
 
 [pylint]
 args = ["--ignore=greeter_test.py"]
+
+[pyright]
+version = "pyright@1.1.360"
