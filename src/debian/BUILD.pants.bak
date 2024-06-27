@@ -1,0 +1,7 @@
+# TODO: Can't test this on mac
+debian_package(
+    name='pkg',
+    description='Debian package sanity check',
+    packages=[],
+    sources=["control"],
+)

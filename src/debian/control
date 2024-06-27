@@ -1,0 +1,9 @@
+Package: sample-debian-package
+Version: 1.0
+Architecture: amd64
+Essential: no
+Section: dev
+Priority: optional
+Depends: python3, python3-distutils
+Maintainer: me@company.com
+Description: A sample Debian package built with Pants.

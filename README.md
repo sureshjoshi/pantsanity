@@ -16,3 +16,13 @@ pants sanity ::
 # From sources:
 PANTS_SOURCE=../wherever-your-pants-repo-is pants sanity ::
 ```
+
+As some of the sanity-checked items are not yet available in a released Pants, this is how I use the repo:
+
+```bash
+# Mainline:
+PANTS_SOURCE=../pants.git/main pants sanity ::
+
+# Compared to the new branch:
+PANTS_SOURCE=../pants.git/call-by-name-whatever pants sanity ::
+```

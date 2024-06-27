@@ -1,0 +1,4 @@
+makeself_archive(
+    name="bin",
+    startup_script=["echo", "hello pants"],
+)
