@@ -1,0 +1,12 @@
+javascript_sources(name="lib")
+
+package_json(
+    name="package_json",
+    scripts=[
+        node_build_script(
+            entry_point="build",
+            output_directories=["dist"],
+            extra_caches=[".parcel-cache"],
+        )
+    ],
+)

@@ -1,5 +1,5 @@
 [GLOBAL]
-pants_version = "2.19.1"
+pants_version = "2.21.0"
 
 build_patterns = ["BUILD.pants", "BUILD"]
 pantsd = true
@@ -9,6 +9,8 @@ backend_packages = [
     "pants.backend.experimental.cc.lint.clangformat",
     "pants.backend.experimental.cue",
     "pants.backend.experimental.debian",
+    "pants.backend.experimental.javascript",
+    "pants.backend.experimental.javascript.lint.prettier",
     "pants.backend.experimental.makeself",
     "pants.backend.experimental.python.lint.add_trailing_comma",
     "pants.backend.experimental.python.lint.ruff.check",
@@ -17,6 +19,7 @@ backend_packages = [
 #    "pants.backend.experimental.python.typecheck.pytype",
     "pants.backend.experimental.sql",
     "pants.backend.experimental.sql.lint.sqlfluff",
+    "pants.backend.experimental.typescript",
     "pants.backend.python",
     "pants.backend.python.lint.autoflake",
     "pants.backend.python.lint.bandit",
@@ -33,7 +36,7 @@ backend_packages = [
 
 [cli.alias]
 # Missing publish, repl, run for python
-sanity = "fix fmt lint check test package"
+sanity = "update-build-files fix fmt lint check test package"
 
 [source]
 marker_filenames = ["BUILD.pants"]
