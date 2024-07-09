@@ -1,0 +1,13 @@
+---
+rules:
+  - id: find-bad-pattern
+    patterns:
+      - pattern: bad_pattern
+    message: >-
+      bad pattern found!
+    languages: [generic]
+    severity: ERROR
+    paths:
+      # 'generic' means this finds itself
+      exclude:
+        - '*.yml'

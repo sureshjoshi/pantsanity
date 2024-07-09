@@ -16,6 +16,10 @@ backend_packages = [
     "pants.backend.experimental.python.lint.ruff.check",
     "pants.backend.experimental.python.lint.ruff.format",
     "pants.backend.experimental.python.typecheck.pyright",
+    "pants.backend.experimental.tools.semgrep",
+    "pants.backend.experimental.tools.trufflehog",
+    "pants.backend.experimental.tools.workunit_logger",
+    "pants.backend.experimental.tools.yamllint",
 #    "pants.backend.experimental.python.typecheck.pytype",
     "pants.backend.experimental.sql",
     "pants.backend.experimental.sql.lint.sqlfluff",
@@ -57,3 +61,6 @@ args = ["--ignore=greeter_test.py"]
 
 [pyright]
 version = "pyright@1.1.360"
+
+[workunit-logger]
+enabled = true
