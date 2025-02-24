@@ -45,6 +45,9 @@ backend_packages = [
     "pants.backend.python.lint.pyupgrade",
     "pants.backend.python.lint.yapf",
 #    "pants.backend.python.typecheck.mypy",
+    "pants.backend.shell",
+    "pants.backend.shell.lint.shellcheck",
+    "pants.backend.shell.lint.shfmt",
 ]
 
 [cli.alias]

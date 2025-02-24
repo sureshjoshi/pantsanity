@@ -1,5 +1,5 @@
 package jvm
 
 open class Kotlin {
-    val CONSTANT = "Hello Kotlin"
+    val constant = "Hello Kotlin"
 }
